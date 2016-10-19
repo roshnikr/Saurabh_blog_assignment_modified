@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script/app1.js"></script>
+</head>
+<body>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10 ">
+		<h1>Add new post</h1>
+		<form class="col-xs-12" autocomplete="off" name="addNewForm" action="/home" method="post"> <!-- form begins here -->
+						<div class="form-group">
+							<label class="col-xs-2 margin-top" for="title">Title:</label>
+							<div class="col-xs-10 margin-top">
+								<input class="form-control" type="text" name="title" id="title" required >
+							</div>
+							<label class="col-xs-2 margin-top" for="author">Author Name:</label>
+							<div class="col-xs-10 margin-top">
+								<input class="form-control" type="text" name="author" id="author" required >
+							</div>
+							<label class="col-xs-2 margin-top " for="date">Date:</label>
+							<div class="col-xs-10 margin-top ">
+								<input class="form-control" type="text" name="date" id="date" required>
+							</div>
+							<label class="col-xs-2 margin-top " for="content">Content:</label>
+							<div class="col-xs-10 margin-top ">
+								<textarea rows="4" cols="50" id="content" name="content">
+
+								</textarea>
+							</div>
+
+							<button type="submit" class="btn  col-xs-3 margin-top add_btn">Add</button>
+							<!-- <button type="reset" class="btn  col-xs-offset-5 margin-top" >Cancel</button> -->
+						</div>
+					</form> <!-- form ends here -->
+		</div>
+		<div class="col-xs-1"></div>
+	
+</body>
+</html>

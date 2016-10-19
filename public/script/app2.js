@@ -1,11 +1,14 @@
 $( document ).ready(function(){
-	$.get("data.json",function(data){
-		var d=data.post_data;
-		console.log(d);
-		$.each(d,function(i,obj){
+	var json_data;
+	$.get("/adddata",function(data){
+		console.log("hhhhh");
+		console.log(data);
+		json_data=data;
+		$.each(json_data,function(i,obj){
 		$(".post_list").append('\
 		<div class="col-xs-10">\
 			<h4 class="col-xs-10">'+obj.title+'</h4>\
+			<p class="content col-xs-11">'+obj.content+'</p>\
 			<a href="#" class="edit glyphicon glyphicon-edit col-xs-1">Edit</a>\
 		</div>\
 		');
@@ -16,24 +19,33 @@ $( document ).ready(function(){
   		$(".new").css("display", "block");
 	});
 	$( ".add_btn" ).click(function() {
-		
+		debugger;
+		console.log("inside add button");
   		var tit=$("#title").val();
-  		console.log(tit);
   		var auth=$("#author").val();
   		var dat=$("#date").val();
   		var con=$("#content").val();
   		var new_datas={"title":tit,"content":con,"editdate":dat,"author":auth};
-  		$.getJSON( "/test.json", function( data ) {
-  			data.post_data.push(new_datas);
-  			console.log("added to json");
+  		//console.log(json_data);
+  		//json_data.post_data.push(new_datas);
   		});
-  		var newData = JSON.stringify(data);
-			jQuery.post('/test.json', {
-    		newData: newData
-		}, function(response){
-    // response could contain the url of the newly saved file
-		})
-  		window.location.replace("home.html");
-	});
 	
 })
+  // 		$.post("/test", {
+		// datas: JSON.stringify(json_data),
+		// }, function(){
+  //   		alert('after post'); 
+  //   		window.location.href = '/home';
+  //   	}
+		// );
+  		// json_data.post_data.push(new_datas);
+  		// $("data.json").replaceWith(json_data);
+  		// console.log("added to json");
+  // 		var newData = JSON.stringify(data);
+		// 	jQuery.post('data.json', {
+  //   		newData: newData
+		// }, function(response){
+  //   // response could contain the url of the newly saved file
+		// })
+  		
+	

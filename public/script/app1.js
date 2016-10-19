@@ -1,7 +1,6 @@
 $( document ).ready(function(){
-	$.get("data.json",function(data){
-		var d=data.post_data;
-		console.log(d);
+	$.get("/adddata",function(data){
+		var d=data;
 		$.each(d,function(i,obj){
 		$(".posts").append('\
 		<div class="col-xs-10 post">\
